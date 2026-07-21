@@ -14,12 +14,14 @@ test.beforeEach(async({page}) => {
 });
 
 
-test('success login', async()=>{
+test('success login', async({page})=>{
 
     const email = ('arsa.afifah@gmail.com');
     const password =('Afifah_071002');
 
     await loginXeltius.loginUser(email, password);
+
+    await expect(page).toHaveURL(/portal/);
 
 }); 
 

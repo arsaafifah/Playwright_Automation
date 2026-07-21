@@ -4,7 +4,7 @@ export class LoginXeltius {
 
 
     readonly signinButton : Locator ;
-    readonly EmailTitle :   Locator;
+    readonly Logo :   Locator;
     readonly emailfield :   Locator ;
     readonly passwordfield : Locator ;
     readonly loginButton : Locator ;
@@ -12,7 +12,7 @@ export class LoginXeltius {
     constructor ( private page : Page) {
 
         this.signinButton = page.getByRole('link', { name: 'Sign In' });
-        this.EmailTitle = page.getByLabel('Email Address');
+        this.Logo = page.getByAltText('Logo');
         this.emailfield = page.getByTestId('email-input');
         this.passwordfield = page.getByTestId('password-input');
         this.loginButton = page.getByRole('button', {name : 'Log In'});
@@ -28,7 +28,7 @@ export class LoginXeltius {
 
         await this.signinButton.click();
 
-        await expect(this.EmailTitle).toBeVisible();
+        await expect(this.Logo).toBeVisible();
 
         await this.emailfield.fill(email);
 

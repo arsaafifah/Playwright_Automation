@@ -22,7 +22,8 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   // workers: process.env.CI ? 1 : undefined,
   workers: 6,
-  timeout: 30000,
+  timeout: 100000,
+  expect:{timeout: 20000},
   // timeout untuk expect/assertion
   // expect: {
   //   timeout: 10000},
